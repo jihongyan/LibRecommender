@@ -38,7 +38,8 @@ def compute_sparse_feats(
         )
     else:
         sparse_embeds = tf.nn.embedding_lookup(embed_var, all_sparse_indices)
-
+    print(flatten)
+    print(sparse_embeds)
     if flatten:
         sparse_embeds = tf.keras.layers.Flatten()(sparse_embeds)
     return sparse_embeds
